@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 // create ShareData model
 class ShareData{
@@ -26,7 +26,7 @@ class ShareData{
 	
 };
 // create BaseEntity model
-class BaseEntity:ShareData{
+class BaseEntity:pblic ShareData{
 	private:
 		int age;
 		string phoneNumper;
@@ -84,17 +84,52 @@ class Teacher:public BaseEntity{
 	
 };
 
+//create course model
+class Course:preData{
+	private:
+		double hour;
+		Student students[5];
+	public:
+		// setter
+		
+		void setHour(double hour){
+			this->hour=hour;
+		}
+		
+		void setstudents(Student students[5]){
+			for(int i=0;i<sizeof(students)/sizeof(students[0];i++){
+				this->students[i]=students[i];
+			}
+		}
+			
+		// Getter
+		double getHour(){
+			return hour;
+		}	
+			
+		Student * getstudents(){
+			return students;
+		}	
+			
+};
+
 // create student model
-class Student:public BaseEntity{
+class Student:  m,,k; BaseEntity{
 	private:
 		double gpa;
 		Teacher teachers[5];
+		Course courses[5];
 	public:
 		// Setter			
 		void setGpa(double gpa){
 			this->gpa=gpa;
 		}
 		
+		void setCourses(Course courses[5]){
+			for(int i=0;i<sizeof(courses)/sizeof(courses[0];i++){
+				this->courses[i]=courses[i];
+			}
+		}
 		void setTeachers(Teacher teachers[5]){
 			for(int i=0;i<sizeof(teachers)/sizeof(teachers[0];i++){
 				this->teachers[i]=teachers[i];
@@ -108,25 +143,14 @@ class Student:public BaseEntity{
 		
 		Teacher * getTeachers(){
 			return teachers;
+		}
+		
+		
+		Course * getcourses(){
+			return courses;
 		}						
 		
 	
 };
 
-//create course model
-class Course:ShareData{
-	private:
-		double hour;
-	public:
-		// setter
-		
-		void setHour(double hour){
-			this->hour=hour;
-		}
-			
-		// Getter
-		double getHour(){
-			return hour;
-		}		
-			
-};
+
