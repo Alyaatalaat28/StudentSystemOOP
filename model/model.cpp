@@ -26,7 +26,7 @@ class ShareData{
 	
 };
 // create BaseEntity model
-class BaseEntity:pblic ShareData{
+class BaseEntity:public ShareData{
 	private:
 		int age;
 		string phoneNumper;
@@ -85,7 +85,7 @@ class Teacher:public BaseEntity{
 };
 
 //create course model
-class Course:preData{
+class Course:public shareData{
 	private:
 		double hour;
 		Student students[5];
@@ -114,7 +114,7 @@ class Course:preData{
 };
 
 // create student model
-class Student:  m,,k; BaseEntity{
+class Student:public BaseEntity{
 	private:
 		double gpa;
 		Teacher teachers[5];
