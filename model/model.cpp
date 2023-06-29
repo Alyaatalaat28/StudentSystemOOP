@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 // create ShareData model
 class ShareData{
 	private:
@@ -54,7 +55,6 @@ class BaseEntity:public ShareData{
 							
 		
 };
-
 // create teacher model
 class Teacher:public BaseEntity{
 		double salary;
@@ -73,7 +73,7 @@ class Teacher:public BaseEntity{
 		
 		// Getter	
 		
-		int getSalary()	{
+		double getSalary()	{
 			return salary;
 		}	
 		
@@ -84,34 +84,6 @@ class Teacher:public BaseEntity{
 	
 };
 
-//create course model
-class Course:public shareData{
-	private:
-		double hour;
-		Student students[5];
-	public:
-		// setter
-		
-		void setHour(double hour){
-			this->hour=hour;
-		}
-		
-		void setstudents(Student students[5]){
-			for(int i=0;i<sizeof(students)/sizeof(students[0];i++){
-				this->students[i]=students[i];
-			}
-		}
-			
-		// Getter
-		double getHour(){
-			return hour;
-		}	
-			
-		Student * getstudents(){
-			return students;
-		}	
-			
-};
 
 // create student model
 class Student:public BaseEntity{
@@ -126,12 +98,12 @@ class Student:public BaseEntity{
 		}
 		
 		void setCourses(Course courses[5]){
-			for(int i=0;i<sizeof(courses)/sizeof(courses[0];i++){
+			for(int i=0;i<sizeof(courses)/sizeof(courses[0]);i++){
 				this->courses[i]=courses[i];
 			}
 		}
 		void setTeachers(Teacher teachers[5]){
-			for(int i=0;i<sizeof(teachers)/sizeof(teachers[0];i++){
+			for(int i=0;i<sizeof(teachers)/sizeof(teachers[0]);i++){
 				this->teachers[i]=teachers[i];
 			}
 		}
@@ -153,4 +125,32 @@ class Student:public BaseEntity{
 	
 };
 
+//create course model
+class Course:public ShareData{
+	private:
+		double hour;
+		Student students[5];
+	public:
+		// setter
+		
+		void setHour(double hour){
+			this->hour=hour;
+		}
+		
+		void setstudents(Student students[5]){
+			for(int i=0;i<sizeof(students)/sizeof(students[0]);i++){
+				this->students[i]=students[i];
+			}
+		}
+			
+		// Getter
+		double getHour(){
+			return hour;
+		}	
+			
+		Student * getstudents(){
+			return students;
+		}	
+			
+};
 
