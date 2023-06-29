@@ -1,39 +1,44 @@
 #include<iostream>
 using namespace std;
+
+void showList(string value){
+			cout<<"1 - Add "<<value<<"\t\t"<<"2 - Remove "<<value<<endl;
+	        cout<<"3 - Edit "<<value<<"\t\t"<<"4 - Show "<<value<<endl;
+	        cout<<"5 - Exit"<<endl;
+}
+
+void displayProgram(){
+	    		cout<<"\t\t************** Student Management System **************"<<endl;
+	cout<<endl;
+    cout<<"Please Enter Process You Need To Do !"<<endl;
+	cout<<"1 - About Student"<<"\t\t"<<"2 - About Teacher"<<endl;
+	cout<<"3 - About Courses"<<"\t\t"<<"4 - Exit"<<endl;
+}
+
 int main(){
-	
 	
 	int process;
 	int flag=0;
     while(true){
-    		cout<<"\t\t************** Student Management System **************"<<endl;
-	cout<<endl;
-	cout<<"Please Enter Process You Need To Do !"<<endl;
-	cout<<endl;
-	cout<<"1 - Add Student"<<"\t\t"<<"2 - Remove Student"<<endl;
-	cout<<"3 - Edit Student"<<"\t"<<"4 - Show Student"<<endl;
-	cout<<"5 - Exit"<<endl;
+    displayProgram();
 	cin>>process;
 	switch(process){
 	
 		case 1:
-			cout<<"Add Student process"<<endl;
+            showList("Student");
 			break;
 		case 2:
-			cout<<"Remove Student process"<<endl;
+			showList("Teacher");
 			break;
 		case 3:
-			cout<<"Edit Student process"<<endl;
+	        showList("Course");
 			break;
 		case 4:
-			cout<<"Show Student process"<<endl;
-			break;
-		case 5:
-			cout<<"Exit process"<<endl;
+		    cout<<"Exit process"<<endl;
 			flag=1;
 			break;
 		default:
-			cout<<"Invalid"<<endl;
+			cout<<"Invalid process"<<endl;
 
 		}
 			if(flag==1){
